@@ -59,3 +59,11 @@ def maxMinAvg(arr):
     print('average: ', avg)
 #maxMinAvg([2,1,3]) #output:3,1,2
 #maxMinAvg([1,11,2,22,3,.33,4,.04]) #output:22,.04,5.42125
+
+#Replace any negative array values with 'Dojo'
+def swapNegativesWithString(arr):
+    for i in range(0,len(arr)):
+        if arr[i]<0:
+            arr[i] = 'Dojo'
+    return arr
+#print(swapNegativesWithString([1,-1,2,-22,3,-.33,4,.04]))

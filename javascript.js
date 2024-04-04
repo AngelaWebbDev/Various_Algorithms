@@ -67,3 +67,12 @@ function maxMinAvg(arr){
 }
 //maxMinAvg([2,1,3]) //output:3,1,2
 //maxMinAvg([1,11,2,22,3,.33,4,.04]) //output:22,.04,5.42125
+
+//Replace any negative array values with 'Dojo'
+function swapNegativesWithString(arr){
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]<0){arr[i] = 'Dojo'}
+    }
+    return arr;
+}
+//console.log(swapNegativesWithString([1,-1,2,-22,3,-.33,4,.04]))
