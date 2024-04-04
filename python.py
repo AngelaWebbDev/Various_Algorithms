@@ -67,3 +67,9 @@ def swapNegativesWithString(arr):
             arr[i] = 'Dojo'
     return arr
 #print(swapNegativesWithString([1,-1,2,-22,3,-.33,4,.04]))
+
+#Print all odd integers from 1 to 255
+def printOdds():
+    for i in range(1,256):
+        print(i)
+printOdds()

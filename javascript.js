@@ -76,3 +76,11 @@ function swapNegativesWithString(arr){
     return arr;
 }
 //console.log(swapNegativesWithString([1,-1,2,-22,3,-.33,4,.04]))
+
+//Print all odd integers from 1 to 255
+function printOdds(){
+    for(let i=1;i<=255;i++){
+        console.log(i)
+    }
+}
+printOdds()
