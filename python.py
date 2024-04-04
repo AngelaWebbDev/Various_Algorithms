@@ -12,4 +12,13 @@ def printIntsAndSum0To255():
     for i in range(1,256):
         sum+=i
         print(i, " ", sum)
-printIntsAndSum0To255()
+#printIntsAndSum0To255()
+
+#Given an array, find and print its largest element.
+def findAndPrintMax(arr):
+    max = arr[0]
+    for i in arr:
+        if i>max:
+            max = i
+    return max
+#print(findAndPrintMax([1,11,2,22,3,.33,4,.04]))

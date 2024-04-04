@@ -14,4 +14,14 @@ function printIntsAndSum0To255() {
         console.log(i, " " , sum);
     }
 }
-printIntsAndSum0To255()
+//printIntsAndSum0To255()
+
+//Given an array, find and print its largest element.
+function findAndPrintMax(arr){
+    let max = arr[0];
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]>max){max = arr[i]}
+    }
+    return max;
+}
+//console.log(findAndPrintMax([1,11,2,22,3,.33,4,.04]))
