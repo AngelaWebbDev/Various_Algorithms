@@ -72,4 +72,11 @@ def swapNegativesWithString(arr):
 def printOdds():
     for i in range(1,256):
         print(i)
-printOdds()
+#printOdds()
+
+#Iterate through a given array, printing each value
+def iteratePrintArray(arr):
+    for i in arr:
+        print(i)
+        
+iteratePrintArray([1,'one',[2,'two'],[3,['three','III']]])

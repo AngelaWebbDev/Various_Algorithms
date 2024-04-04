@@ -83,4 +83,12 @@ function printOdds(){
         console.log(i)
     }
 }
-printOdds()
+//printOdds()
+
+//Iterate through a given array, printing each value
+function iteratePrintArray(arr){
+    arr.forEach(item => {
+        console.log(item)
+    });
+}
+iteratePrintArray([1,'one',[2,'two'],[3,['three','III']]])
