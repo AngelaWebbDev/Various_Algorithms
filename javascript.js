@@ -49,3 +49,21 @@ function greaterThanY(arr,y){
 }
 // count = greaterThanY([1,11,2,22,3,.33,4,.04],2)
 // console.log('total: ', count)
+
+//Given an array, print the max, min and average values for that array
+function maxMinAvg(arr){
+    let max = arr[0]
+    let min = arr[0]
+    let totalAdd = arr[0]
+    for(let i=1;i<arr.length;i++){
+        if(arr[i]>max){max = arr[i]}
+        else if(arr[i]<min){min = arr[i]}
+        totalAdd += arr[i]
+    }
+    let avg = totalAdd/arr.length;
+    console.log('max: ', max);
+    console.log('min: ', min);
+    console.log('average: ', avg);
+}
+//maxMinAvg([2,1,3]) //output:3,1,2
+//maxMinAvg([1,11,2,22,3,.33,4,.04]) //output:22,.04,5.42125

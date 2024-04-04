@@ -41,3 +41,21 @@ def greaterThanY(arr, y):
     return counter
 # count = greaterThanY([1,11,2,22,3,.33,4,.04],2)
 # print("total: ", count)
+
+#Given an array, print the max, min and average values for that array.
+def maxMinAvg(arr):
+    max=arr[0]
+    min = arr[0]
+    totalAdd = 0
+    for i in arr:
+        if i>max:
+            max = i
+        elif i<min:
+            min = i
+        totalAdd += i
+    avg = totalAdd/len(arr)
+    print('max: ', max)
+    print('min: ', min)
+    print('average: ', avg)
+#maxMinAvg([2,1,3]) #output:3,1,2
+#maxMinAvg([1,11,2,22,3,.33,4,.04]) #output:22,.04,5.42125
