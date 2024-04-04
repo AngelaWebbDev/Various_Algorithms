@@ -25,3 +25,13 @@ function findAndPrintMax(arr){
     return max;
 }
 //console.log(findAndPrintMax([1,11,2,22,3,.33,4,.04]))
+
+//Create an array with all the odd integers between 1 and 255 (inclusive)
+function arrayWithOdds(){
+    let odds = [];
+    for(let i=1;i<=255;i++){
+        odds.push(i)
+    }
+    return odds
+}
+console.log(arrayWithOdds())

@@ -22,3 +22,11 @@ def findAndPrintMax(arr):
             max = i
     return max
 #print(findAndPrintMax([1,11,2,22,3,.33,4,.04]))
+
+#Create an array with all the odd integers between 1 and 255 (inclusive)
+def arrayWithOdds():
+    odds = []
+    for i in range(1,256):
+        odds.append(i)
+    return odds
+print(arrayWithOdds())
