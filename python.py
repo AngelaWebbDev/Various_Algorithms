@@ -79,4 +79,22 @@ def iteratePrintArray(arr):
     for i in arr:
         print(i)
         
-iteratePrintArray([1,'one',[2,'two'],[3,['three','III']]])
+#iteratePrintArray([1,'one',[2,'two'],[3,['three','III']]])
+
+#Analyze an array’s values and print the average
+def getPrintAvg(arr):
+    addTotal = 0
+    counter = 0
+    for i in arr:
+        if type(i)==int or type(i)==float:
+            addTotal += i
+            counter += 1
+    if(counter != 0):
+        print('addTotal: ', addTotal, ', counter: ', counter)
+        return addTotal/counter
+    else:
+        return 'array does not have any numbers'
+print(getPrintAvg([1,2,3,4,5,6,7,8,9,10]))
+myVar = 3
+print(getPrintAvg([1,'one',2,[2,2],myVar]))
+print(getPrintAvg(['one','two','three']))

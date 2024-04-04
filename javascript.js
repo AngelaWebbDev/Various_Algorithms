@@ -91,4 +91,23 @@ function iteratePrintArray(arr){
         console.log(item)
     });
 }
-iteratePrintArray([1,'one',[2,'two'],[3,['three','III']]])
+//iteratePrintArray([1,'one',[2,'two'],[3,['three','III']]])
+
+//Analyze an array’s values and print the average
+function getPrintAvg(arr){
+    let addTotal = 0;
+    let counter = 0;
+    arr.forEach(item => {
+        if((typeof item) == 'number'){
+            addTotal += item;
+            counter++;
+        }
+    })
+    if(counter>0){return addTotal/counter}
+    else{return 'no numbers in this array'}
+    
+}
+console.log(getPrintAvg([1,2,3,4,5,6,7,8,9,10]))
+myVar = 3
+console.log(getPrintAvg([1,'one',2,[2,2],myVar]))
+console.log(getPrintAvg(['one','two','three']))
