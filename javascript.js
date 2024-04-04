@@ -34,4 +34,18 @@ function arrayWithOdds(){
     }
     return odds
 }
-console.log(arrayWithOdds())
+//console.log(arrayWithOdds())
+
+//Given an array and a value Y, count and print the number of array values greater than Y.
+function greaterThanY(arr,y){
+    let counter = 0;
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]>y){
+            console.log(arr[i],' ');
+            counter++;
+        }
+    }
+    return counter;
+}
+// count = greaterThanY([1,11,2,22,3,.33,4,.04],2)
+// console.log('total: ', count)

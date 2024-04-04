@@ -29,4 +29,15 @@ def arrayWithOdds():
     for i in range(1,256):
         odds.append(i)
     return odds
-print(arrayWithOdds())
+#print(arrayWithOdds())
+
+#Given an array and a value Y, count and print the number of array values greater than Y.
+def greaterThanY(arr, y):
+    counter = 0
+    for i in arr:
+        if i>y:
+            counter += 1
+            print(i," ")
+    return counter
+# count = greaterThanY([1,11,2,22,3,.33,4,.04],2)
+# print("total: ", count)
