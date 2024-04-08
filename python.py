@@ -106,4 +106,14 @@ def squareValues(arr):
         arr[index] = value*value
         index += 1
     return arr
-print(squareValues([1,2,3,4,5]))
+# print(squareValues([1,2,3,4,5]))
+
+#Return the given array, after setting any negative values to zero.
+def zeroOutNegatives(arr):
+    index = 0
+    for value in arr:
+        if(value<0):
+            arr[index] = 0
+        index += 1
+    return arr
+print(zeroOutNegatives([1,-2,3.3,-.04]))

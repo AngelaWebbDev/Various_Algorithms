@@ -121,4 +121,15 @@ function squareValues(arr){
     });
     return arr;
 }
-console.log(squareValues([1,2,3,4,5]))
+// console.log(squareValues([1,2,3,4,5]))
+
+//Return the given array, after setting any negative values to zero.
+function zeroOutNegatives(arr){
+    index = 0;
+    arr.forEach(value => {
+        if(value<0){arr[index] = 0;}
+        index++;
+    });
+    return arr
+}
+console.log(zeroOutNegatives([1,-2,3.3,-.04]))
