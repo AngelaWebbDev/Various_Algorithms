@@ -94,7 +94,16 @@ def getPrintAvg(arr):
         return addTotal/counter
     else:
         return 'array does not have any numbers'
-print(getPrintAvg([1,2,3,4,5,6,7,8,9,10]))
-myVar = 3
-print(getPrintAvg([1,'one',2,[2,2],myVar]))
-print(getPrintAvg(['one','two','three']))
+# print(getPrintAvg([1,2,3,4,5,6,7,8,9,10]))
+# myVar = 3
+# print(getPrintAvg([1,'one',2,[2,2],myVar]))
+# print(getPrintAvg(['one','two','three']))
+
+#Square each value in a given array, returning that same array with changed values.
+def squareValues(arr):
+    index = 0
+    for value in arr:
+        arr[index] = value*value
+        index += 1
+    return arr
+print(squareValues([1,2,3,4,5]))

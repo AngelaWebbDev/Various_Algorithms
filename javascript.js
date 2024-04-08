@@ -107,7 +107,18 @@ function getPrintAvg(arr){
     else{return 'no numbers in this array'}
     
 }
-console.log(getPrintAvg([1,2,3,4,5,6,7,8,9,10]))
-myVar = 3
-console.log(getPrintAvg([1,'one',2,[2,2],myVar]))
-console.log(getPrintAvg(['one','two','three']))
+// console.log(getPrintAvg([1,2,3,4,5,6,7,8,9,10]))
+// myVar = 3
+// console.log(getPrintAvg([1,'one',2,[2,2],myVar]))
+// console.log(getPrintAvg(['one','two','three']))
+
+//Square each value in a given array, returning that same array with changed values.
+function squareValues(arr){
+    index = 0;
+    arr.forEach(value => {
+        arr[index] = value*value;
+        index++;
+    });
+    return arr;
+}
+console.log(squareValues([1,2,3,4,5]))
