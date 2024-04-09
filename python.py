@@ -116,4 +116,16 @@ def zeroOutNegatives(arr):
             arr[index] = 0
         index += 1
     return arr
-print(zeroOutNegatives([1,-2,3.3,-.04]))
+# print(zeroOutNegatives([1,-2,3.3,-.04]))
+
+#Given an array, move all values forward by one index, dropping the first and leaving a '0'​ value at the end
+def shiftArrayValues(arr):
+    index = 0
+    for value in arr:
+        if(index<len(arr)-1):
+            arr[index] = arr[index+1]
+        else:
+            arr[index] = 0
+        index += 1
+    return arr
+print(shiftArrayValues([1,2,3,4,5]))

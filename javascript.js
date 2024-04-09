@@ -132,4 +132,17 @@ function zeroOutNegatives(arr){
     });
     return arr
 }
-console.log(zeroOutNegatives([1,-2,3.3,-.04]))
+// console.log(zeroOutNegatives([1,-2,3.3,-.04]))
+
+//Given an array, move all values forward by one index, dropping the first and leaving a '0'​ value at the end
+function shiftArrayValues(arr){
+    for(let i=0;i<arr.length;i++){
+        if(i<arr.length-1){
+            arr[i] = arr[i+1]
+        }else{
+            arr[i] = 0
+        }
+    }
+    return arr
+}
+console.log(shiftArrayValues([1,2,3,4,5]))
