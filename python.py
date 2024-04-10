@@ -173,4 +173,21 @@ def threesAndFives():
                 sum+=i
         i+=1
     return sum
-print(threesAndFives())
+# print(threesAndFives())
+
+#​ Change your function to make a BetterThreesFives(start,end)​where start and end  values are customizable
+def BetterThreesFives(start, end):
+    i = start
+    sum = 0
+    while(i<=end):
+        print('i: ', i)
+        if(i%3==0 or i%5==0):
+            print(i,'%3=',i%3,' and ',i,'%5=',i%5)
+            if(not(i%3==0 and i%5==0)):
+                print('not both divisible')
+                sum+=i
+                print('sum: ', sum)
+        i+=1
+    return sum
+print(BetterThreesFives(1,15)) #expected output: 45
+    

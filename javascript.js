@@ -192,4 +192,20 @@ function threesAndFives(){
     }
     return sum
 }
-console.log(threesAndFives())
+// console.log(threesAndFives())
+
+//​ Change your function to make a BetterThreesFives(start,end)​where start and end  values are customizable
+function BetterThreesFives(start, end){
+    let i = start;
+    let sum = 0;
+    while(i<=end){
+        if(i%3==0 || i%5==0){
+            if(i%3!=0 || i%5!=0){
+                sum+=i
+            }
+        }
+        i++;        
+    }
+    return sum
+}
+console.log(BetterThreesFives(1,15)) //expected output:45
