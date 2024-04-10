@@ -128,4 +128,22 @@ def shiftArrayValues(arr):
             arr[index] = 0
         index += 1
     return arr
-print(shiftArrayValues([1,2,3,4,5]))
+# print(shiftArrayValues([1,2,3,4,5]))
+
+#Implement a function sigma(num)​ that, given a
+# number, returns the sum of all positive integers
+# from 1 up to number (inclusive)
+def sigma(num):
+    if(num<2):
+        return 0
+    sum = 0
+    for i in range(2,num+1):
+        if(i%2==0):
+            sum+=i
+    return sum
+print(sigma(5)) #expected output: 6
+print(sigma(1)) #expected output:0
+print(sigma(10)) #expected output:20
+
+
+    

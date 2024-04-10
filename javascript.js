@@ -145,4 +145,17 @@ function shiftArrayValues(arr){
     }
     return arr
 }
-console.log(shiftArrayValues([1,2,3,4,5]))
+// console.log(shiftArrayValues([1,2,3,4,5]))
+
+//Implement a function sigma(num)​ that, given a
+// number, returns the sum of all positive integers
+// from 1 up to number (inclusive)
+function sigma(num){
+    let sum = 0;
+    if(num<2){return 0;};
+    for(let i=2;i<=num;i+=2){sum+=i};
+    return sum;
+}
+console.log(sigma(5)) //expected output: 6
+console.log(sigma(1)) //expected output:0
+console.log(sigma(10)) //expected output:20
