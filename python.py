@@ -158,7 +158,19 @@ def factorial(num):
         for i in range(2, num+1):
             sum*=i
         return sum
-print(factorial(-3)) #expected output:positive numbers only
-print(factorial(0)) #expected output: 0
-print(factorial(1)) #expected output: 1
-print(factorial(3)) #expected output:6
+# print(factorial(-3)) #expected output:positive numbers only
+# print(factorial(0)) #expected output: 0
+# print(factorial(1)) #expected output: 1
+# print(factorial(3)) #expected output:6
+
+# function ThreesFives()​ that adds each value from 100 and 4000000 (inclusive) if that value is evenly divisible by 3 or 5 but not both. Display the final sum in the console
+def threesAndFives():
+    i = 100
+    sum = 0
+    while(i<=4000000):
+        if(i%3==0 or i%5==0):
+            if(not(i%3==0 and i%5==0)):
+                sum+=i
+        i+=1
+    return sum
+print(threesAndFives())

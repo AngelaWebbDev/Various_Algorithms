@@ -173,7 +173,23 @@ function factorial(num){
         return sum
     }
 }
-console.log(factorial(-3))//expected output:positive numbers only
-console.log(factorial(0)) //expected output: 0
-console.log(factorial(1)) //expected output: 1
-console.log(factorial(3)) //expected output:6
+// console.log(factorial(-3))//expected output:positive numbers only
+// console.log(factorial(0)) //expected output: 0
+// console.log(factorial(1)) //expected output: 1
+// console.log(factorial(3)) //expected output:6
+
+// function ThreesFives()​ that adds each value from 100 and 4000000 (inclusive) if that value is evenly divisible by 3 or 5 but not both. Display the final sum in the console
+function threesAndFives(){
+    let i=100;
+    let sum = 0;
+    while(i<=4000000){
+        if(i%3==0 || i%5==0){
+            if(i%3!=0 || i%5!=0){
+                sum+=i
+            }
+        }
+        i++;
+    }
+    return sum
+}
+console.log(threesAndFives())
