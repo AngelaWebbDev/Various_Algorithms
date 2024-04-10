@@ -141,9 +141,24 @@ def sigma(num):
         if(i%2==0):
             sum+=i
     return sum
-print(sigma(5)) #expected output: 6
-print(sigma(1)) #expected output:0
-print(sigma(10)) #expected output:20
+# print(sigma(5)) #expected output: 6
+# print(sigma(1)) #expected output:0
+# print(sigma(10)) #expected output:20
 
-
-    
+# function factorial(num)​ that, given a number, returns the product (multiplication) of all positive integers from 1 up to number (inclusive)
+def factorial(num):
+    if(num<0):
+        return 'positive numbers only'
+    elif(num==0):
+        return 0
+    elif(num==1):
+        return 1
+    else:
+        sum = 1
+        for i in range(2, num+1):
+            sum*=i
+        return sum
+print(factorial(-3)) #expected output:positive numbers only
+print(factorial(0)) #expected output: 0
+print(factorial(1)) #expected output: 1
+print(factorial(3)) #expected output:6

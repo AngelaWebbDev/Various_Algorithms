@@ -156,6 +156,24 @@ function sigma(num){
     for(let i=2;i<=num;i+=2){sum+=i};
     return sum;
 }
-console.log(sigma(5)) //expected output: 6
-console.log(sigma(1)) //expected output:0
-console.log(sigma(10)) //expected output:20
+// console.log(sigma(5)) //expected output: 6
+// console.log(sigma(1)) //expected output:0
+// console.log(sigma(10)) //expected output:20
+
+// function factorial(num)​ that, given a number, returns the product (multiplication) of all positive integers from 1 up to number (inclusive)
+function factorial(num){
+    if(num<0){return 'positive numbers only'}
+    else if(num==0){return 0}
+    else if(num==1){return 1}
+    else{
+        let sum = 1;
+        for(let i=1;i<=num;i++){
+            sum*=i;
+        }
+        return sum
+    }
+}
+console.log(factorial(-3))//expected output:positive numbers only
+console.log(factorial(0)) //expected output: 0
+console.log(factorial(1)) //expected output: 1
+console.log(factorial(3)) //expected output:6
