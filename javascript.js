@@ -208,4 +208,66 @@ function BetterThreesFives(start, end){
     }
     return sum
 }
-console.log(BetterThreesFives(1,15)) //expected output:45
+// console.log(BetterThreesFives(1,15)) //expected output:45
+
+//Implement generateCoinChange(cents)​ that accepts a parameter for the number of cents, and computes how to represent that amount with the smallest number of coins. Console.log the result
+function generateCoinChange(cents){
+    if(cents<=0){
+        console.log('no change due');
+        return 'error'
+    }else if(cents%1>0){
+        console.log('cents must be a whole number');
+        return 'error'
+    }else{
+        let quarters = Math.floor(cents/25);
+        if(quarters>0 && quarters !=1){
+            console.log(quarters, ' quarters')
+        }
+        if(quarters==1){
+            console.log('1 quarter')
+        }
+        cents = cents - (quarters * 25)
+        let dimes = Math.floor(cents/10);
+        if(dimes>0 && dimes != 1){
+            console.log(dimes, ' dimes');
+        }
+        if(dimes==1){
+            console.log('1 dime')
+        }
+        cents = cents - (dimes * 10)
+        let nickels = Math.floor(cents/5);
+        if(nickels>0 && nickels != 1){
+            console.log(nickels, ' nickels')
+        }
+        if(nickels==1){
+            console.log('1 nickel')
+        }
+        cents = cents - (nickels * 5)
+        if(cents>0 && cents != 1){
+            console.log(cents, ' pennies')
+        }
+        if(cents==1){
+            console.log('1 penny')
+        }
+    }
+}
+console.log('-2:')
+generateCoinChange(-2) //expected output: no change due
+console.log('1.23:')
+generateCoinChange(1.23) //expected output: cents must be a whole number
+console.log('4:')
+generateCoinChange(4) //expected output:4 pennies
+console.log('7: ')
+generateCoinChange(7) //expected output:1 nickel, 2 pennies
+console.log('16: ')
+generateCoinChange(16) //expected output: 1 dime, 1 nickel, 1 penny
+console.log('41:')
+generateCoinChange(41) //expected output:1 quarter, 1 dime, 1 nickel, 1 penny
+console.log('79: ')
+generateCoinChange(79) //expected output:2 quarters, 2 dimes, 1 nickel, 4 pennies
+console.log('32:')
+generateCoinChange(32) //expected output:1 quarter, 1 nickel, 2 pennies
+console.log('21:')
+generateCoinChange(21) //expected output:2 dimes, 1 penny
+console.log('46:')
+generateCoinChange(46) //expected output: 1 quarter, 2 dimes, 1 penny    

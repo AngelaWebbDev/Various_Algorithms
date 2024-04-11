@@ -189,5 +189,56 @@ def BetterThreesFives(start, end):
                 print('sum: ', sum)
         i+=1
     return sum
-print(BetterThreesFives(1,15)) #expected output: 45
-    
+# print(BetterThreesFives(1,15)) #expected output: 45
+
+#Implement generateCoinChange(cents)​ that accepts a parameter for the number of cents, and computes how to represent that amount with the smallest number of coins. Console.log the result
+import math
+def generateCoinChange(cents):
+    if cents<=0:
+        print('no change due')
+        return 'error'
+    if cents%1>0:
+        print('cents must be a whole number')
+        return 'error'
+    quarters = math.trunc(cents/25)
+    if quarters>0 and quarters !=1:
+        print(quarters,' quarters')
+    if quarters == 1:
+        print('1 quarter')
+    cents = cents-(quarters*25)
+    dimes = math.trunc(cents/10)
+    if dimes>0 and dimes!=1:
+        print(dimes, ' dimes')
+    if dimes == 1:
+        print('1 dime')
+    cents = cents - (dimes*10)
+    nickels = math.trunc(cents/5)
+    if nickels>0 and nickels!=1:
+        print(nickels, ' nickels')
+    if nickels==1:
+        print('1 nickel')
+    cents = cents - (nickels*5)
+    if cents>0 and cents!=1:
+        print(cents, ' pennies')
+    if cents==1:
+        print('1 penny')
+print('-2:')
+generateCoinChange(-2) #expected output: no change due
+print('1.23:')
+generateCoinChange(1.23) #expected output: cents must be a whole number
+print('4:')
+generateCoinChange(4) #expected output:4 pennies
+print('7: ')
+generateCoinChange(7) #expected output:1 nickel, 2 pennies
+print('16: ')
+generateCoinChange(16) #expected output: 1 dime, 1 nickel, 1 penny
+print('41:')
+generateCoinChange(41) #expected output:1 quarter, 1 dime, 1 nickel, 1 penny
+print('79: ')
+generateCoinChange(79) #expected output:2 quarters, 2 dimes, 1 nickel, 4 pennies
+print('32:')
+generateCoinChange(32) #expected output:1 quarter, 1 nickel, 2 pennies
+print('21:')
+generateCoinChange(21) #expected output:2 dimes, 1 penny
+print('46:')
+generateCoinChange(46) #expected output: 1 quarter, 2 dimes, 1 penny    
