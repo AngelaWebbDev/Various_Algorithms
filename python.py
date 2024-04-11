@@ -222,23 +222,68 @@ def generateCoinChange(cents):
         print(cents, ' pennies')
     if cents==1:
         print('1 penny')
-print('-2:')
-generateCoinChange(-2) #expected output: no change due
-print('1.23:')
-generateCoinChange(1.23) #expected output: cents must be a whole number
-print('4:')
-generateCoinChange(4) #expected output:4 pennies
-print('7: ')
-generateCoinChange(7) #expected output:1 nickel, 2 pennies
-print('16: ')
-generateCoinChange(16) #expected output: 1 dime, 1 nickel, 1 penny
-print('41:')
-generateCoinChange(41) #expected output:1 quarter, 1 dime, 1 nickel, 1 penny
-print('79: ')
-generateCoinChange(79) #expected output:2 quarters, 2 dimes, 1 nickel, 4 pennies
-print('32:')
-generateCoinChange(32) #expected output:1 quarter, 1 nickel, 2 pennies
-print('21:')
-generateCoinChange(21) #expected output:2 dimes, 1 penny
-print('46:')
-generateCoinChange(46) #expected output: 1 quarter, 2 dimes, 1 penny    
+# print('-2:')
+# generateCoinChange(-2) #expected output: no change due
+# print('1.23:')
+# generateCoinChange(1.23) #expected output: cents must be a whole number
+# print('4:')
+# generateCoinChange(4) #expected output:4 pennies
+# print('7: ')
+# generateCoinChange(7) #expected output:1 nickel, 2 pennies
+# print('16: ')
+# generateCoinChange(16) #expected output: 1 dime, 1 nickel, 1 penny
+# print('41:')
+# generateCoinChange(41) #expected output:1 quarter, 1 dime, 1 nickel, 1 penny
+# print('79: ')
+# generateCoinChange(79) #expected output:2 quarters, 2 dimes, 1 nickel, 4 pennies
+# print('32:')
+# generateCoinChange(32) #expected output:1 quarter, 1 nickel, 2 pennies
+# print('21:')
+# generateCoinChange(21) #expected output:2 dimes, 1 penny
+# print('46:')
+# generateCoinChange(46) #expected output: 1 quarter, 2 dimes, 1 penny
+
+#Implement a ‘die’ that randomly returns an integer between 1 and 6 inclusive. Roll a pair of these dice, tracking the statistics until doubles are rolled. Display the number of rolls, min, max, and average
+import random
+
+numOfRolls = 0
+minRoll = 1
+maxRoll = 0
+rollArray = []
+averageRoll = 0
+
+def statisticsToDoubles():
+    global numOfRolls, minRoll, maxRoll, rollArray, averageRoll
+    roll1 = oneDie()
+    roll2 = oneDie()
+    numOfRolls += 1
+    minRoll = min(roll1, roll2, minRoll)
+    maxRoll = max(roll1, roll2, maxRoll)
+    rollArray.append(roll1)
+    rollArray.append(roll2)
+    totalRolls = 0
+    for roll in rollArray:
+        totalRolls += roll
+    averageRoll = totalRolls/numOfRolls
+
+def oneDie():
+    return random.randint(1,6)
+
+print('Two dice will be rolled each time.')
+userInput = input(print('Number of rolls: '))
+if userInput==0:
+    numOfRolls = 0
+    minRoll = 'N/A'
+    maxRoll = 'N/A'
+    averageRoll = 'N/A'
+else:
+    for i in range(0,int(userInput)):
+        statisticsToDoubles()
+
+# statisticsToDoubles()
+# statisticsToDoubles()
+# statisticsToDoubles()
+print('numOfRolls: ', numOfRolls)
+print('minRoll: ', minRoll)
+print('maxRoll: ', maxRoll)
+print('averageRoll: ', round(averageRoll, 2))

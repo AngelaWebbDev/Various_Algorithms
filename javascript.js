@@ -251,23 +251,59 @@ function generateCoinChange(cents){
         }
     }
 }
-console.log('-2:')
-generateCoinChange(-2) //expected output: no change due
-console.log('1.23:')
-generateCoinChange(1.23) //expected output: cents must be a whole number
-console.log('4:')
-generateCoinChange(4) //expected output:4 pennies
-console.log('7: ')
-generateCoinChange(7) //expected output:1 nickel, 2 pennies
-console.log('16: ')
-generateCoinChange(16) //expected output: 1 dime, 1 nickel, 1 penny
-console.log('41:')
-generateCoinChange(41) //expected output:1 quarter, 1 dime, 1 nickel, 1 penny
-console.log('79: ')
-generateCoinChange(79) //expected output:2 quarters, 2 dimes, 1 nickel, 4 pennies
-console.log('32:')
-generateCoinChange(32) //expected output:1 quarter, 1 nickel, 2 pennies
-console.log('21:')
-generateCoinChange(21) //expected output:2 dimes, 1 penny
-console.log('46:')
-generateCoinChange(46) //expected output: 1 quarter, 2 dimes, 1 penny    
+// console.log('-2:')
+// generateCoinChange(-2) //expected output: no change due
+// console.log('1.23:')
+// generateCoinChange(1.23) //expected output: cents must be a whole number
+// console.log('4:')
+// generateCoinChange(4) //expected output:4 pennies
+// console.log('7: ')
+// generateCoinChange(7) //expected output:1 nickel, 2 pennies
+// console.log('16: ')
+// generateCoinChange(16) //expected output: 1 dime, 1 nickel, 1 penny
+// console.log('41:')
+// generateCoinChange(41) //expected output:1 quarter, 1 dime, 1 nickel, 1 penny
+// console.log('79: ')
+// generateCoinChange(79) //expected output:2 quarters, 2 dimes, 1 nickel, 4 pennies
+// console.log('32:')
+// generateCoinChange(32) //expected output:1 quarter, 1 nickel, 2 pennies
+// console.log('21:')
+// generateCoinChange(21) //expected output:2 dimes, 1 penny
+// console.log('46:')
+// generateCoinChange(46) //expected output: 1 quarter, 2 dimes, 1 penny
+
+// Implement a ‘die’ that randomly returns an integer between 1 and 6 inclusive. Roll a pair of these dice, tracking the statistics until doubles are rolled. Display the number of rolls, min, max, and average
+
+let numOfRolls = 0
+let minRoll = 1
+let maxRoll = 0
+let rollArray = []
+let averageRoll = 0
+
+function statisticsToDoubles(){
+    let roll1 = oneDie()
+    let roll2 = oneDie()
+    numOfRolls += 1
+    minRoll = Math.min(roll1, roll2, minRoll)
+    maxRoll = Math.max(roll1, roll2, maxRoll)
+    rollArray.push(roll1)
+    rollArray.push(roll2)
+    let totalRolls = 0
+    rollArray.forEach(roll => {
+        totalRolls += roll
+    });
+    averageRoll = totalRolls/(numOfRolls*2)
+}
+
+function oneDie(){
+    //Math.random() * max + min
+    return (Math.trunc(Math.random() * 6 + 1))
+}
+
+statisticsToDoubles()
+statisticsToDoubles()
+statisticsToDoubles()
+console.log('numOfRolls: ', numOfRolls)
+console.log('minRoll: ', minRoll)
+console.log('maxRoll: ', maxRoll)
+console.log('averageRoll: ', Math.round(averageRoll, 2))
