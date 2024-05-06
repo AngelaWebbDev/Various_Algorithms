@@ -254,36 +254,50 @@ averageRoll = 0
 
 def statisticsToDoubles():
     global numOfRolls, minRoll, maxRoll, rollArray, averageRoll
-    roll1 = oneDie()
-    roll2 = oneDie()
-    numOfRolls += 1
-    minRoll = min(roll1, roll2, minRoll)
-    maxRoll = max(roll1, roll2, maxRoll)
-    rollArray.append(roll1)
-    rollArray.append(roll2)
+    doubles = False
+    while(doubles==False):
+        roll1 = oneDie()
+        roll2 = oneDie()
+        numOfRolls += 1
+        minRoll = min(roll1, roll2, minRoll)
+        maxRoll = max(roll1, roll2, maxRoll)
+        rollArray.append([roll1, roll2])
+        if roll1==roll2:
+            doubles = True
     totalRolls = 0
     for roll in rollArray:
-        totalRolls += roll
+        for die in roll:
+            totalRolls += die
     averageRoll = totalRolls/numOfRolls
 
 def oneDie():
     return random.randint(1,6)
 
-print('Two dice will be rolled each time.')
-userInput = input(print('Number of rolls: '))
-if userInput==0:
-    numOfRolls = 0
-    minRoll = 'N/A'
-    maxRoll = 'N/A'
-    averageRoll = 'N/A'
-else:
-    for i in range(0,int(userInput)):
-        statisticsToDoubles()
+# statisticsToDoubles()
+# print('numOfRolls: ', numOfRolls)
+# print('minRoll: ', minRoll)
+# print('maxRoll: ', maxRoll)
+# # print('rollArray: ', rollArray) #for testing only
+# print('averageRoll: ', round(averageRoll, 2))
 
-# statisticsToDoubles()
-# statisticsToDoubles()
-# statisticsToDoubles()
-print('numOfRolls: ', numOfRolls)
-print('minRoll: ', minRoll)
-print('maxRoll: ', maxRoll)
-print('averageRoll: ', round(averageRoll, 2))
+#implement function that, given a number,
+#sums that number's digits repeatedly
+#until sum is only one digit
+#return final one digit result
+
+def sumToOneDigit(num):
+    sum = 0
+    if len(str(num))==1:
+        return num
+    while len(str(num))>1:
+        for digit in str(num):
+            if digit.isdigit():
+                sum += int(digit)
+        num = sum
+        if len(str(num))>1:
+            sum = 0
+    return sum
+            
+print(sumToOneDigit(12)) #expected output: 3
+print(sumToOneDigit(1.23)) #expected output: 6
+print(sumToOneDigit(1234567)) #expected output: 1

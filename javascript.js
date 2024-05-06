@@ -5,6 +5,8 @@ function print1to255 () {
 }
 //print1to255()
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //print integers from 0 to 255, and with each integer print the sum so far
 function printIntsAndSum0To255() {
     var sum=0;
@@ -16,6 +18,8 @@ function printIntsAndSum0To255() {
 }
 //printIntsAndSum0To255()
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //Given an array, find and print its largest element.
 function findAndPrintMax(arr){
     let max = arr[0];
@@ -26,6 +30,8 @@ function findAndPrintMax(arr){
 }
 //console.log(findAndPrintMax([1,11,2,22,3,.33,4,.04]))
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //Create an array with all the odd integers between 1 and 255 (inclusive)
 function arrayWithOdds(){
     let odds = [];
@@ -36,6 +42,8 @@ function arrayWithOdds(){
 }
 //console.log(arrayWithOdds())
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //Given an array and a value Y, count and print the number of array values greater than Y.
 function greaterThanY(arr,y){
     let counter = 0;
@@ -50,6 +58,8 @@ function greaterThanY(arr,y){
 // count = greaterThanY([1,11,2,22,3,.33,4,.04],2)
 // console.log('total: ', count)
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //Given an array, print the max, min and average values for that array
 function maxMinAvg(arr){
     let max = arr[0]
@@ -68,6 +78,8 @@ function maxMinAvg(arr){
 //maxMinAvg([2,1,3]) //output:3,1,2
 //maxMinAvg([1,11,2,22,3,.33,4,.04]) //output:22,.04,5.42125
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //Replace any negative array values with 'Dojo'
 function swapNegativesWithString(arr){
     for(let i=0;i<arr.length;i++){
@@ -77,6 +89,8 @@ function swapNegativesWithString(arr){
 }
 //console.log(swapNegativesWithString([1,-1,2,-22,3,-.33,4,.04]))
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //Print all odd integers from 1 to 255
 function printOdds(){
     for(let i=1;i<=255;i++){
@@ -85,6 +99,8 @@ function printOdds(){
 }
 //printOdds()
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //Iterate through a given array, printing each value
 function iteratePrintArray(arr){
     arr.forEach(item => {
@@ -93,6 +109,8 @@ function iteratePrintArray(arr){
 }
 //iteratePrintArray([1,'one',[2,'two'],[3,['three','III']]])
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //Analyze an array’s values and print the average
 function getPrintAvg(arr){
     let addTotal = 0;
@@ -112,6 +130,8 @@ function getPrintAvg(arr){
 // console.log(getPrintAvg([1,'one',2,[2,2],myVar]))
 // console.log(getPrintAvg(['one','two','three']))
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //Square each value in a given array, returning that same array with changed values.
 function squareValues(arr){
     index = 0;
@@ -123,6 +143,8 @@ function squareValues(arr){
 }
 // console.log(squareValues([1,2,3,4,5]))
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //Return the given array, after setting any negative values to zero.
 function zeroOutNegatives(arr){
     index = 0;
@@ -134,6 +156,8 @@ function zeroOutNegatives(arr){
 }
 // console.log(zeroOutNegatives([1,-2,3.3,-.04]))
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //Given an array, move all values forward by one index, dropping the first and leaving a '0'​ value at the end
 function shiftArrayValues(arr){
     for(let i=0;i<arr.length;i++){
@@ -147,6 +171,8 @@ function shiftArrayValues(arr){
 }
 // console.log(shiftArrayValues([1,2,3,4,5]))
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //Implement a function sigma(num)​ that, given a
 // number, returns the sum of all positive integers
 // from 1 up to number (inclusive)
@@ -160,6 +186,8 @@ function sigma(num){
 // console.log(sigma(1)) //expected output:0
 // console.log(sigma(10)) //expected output:20
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 // function factorial(num)​ that, given a number, returns the product (multiplication) of all positive integers from 1 up to number (inclusive)
 function factorial(num){
     if(num<0){return 'positive numbers only'}
@@ -178,6 +206,8 @@ function factorial(num){
 // console.log(factorial(1)) //expected output: 1
 // console.log(factorial(3)) //expected output:6
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 // function ThreesFives()​ that adds each value from 100 and 4000000 (inclusive) if that value is evenly divisible by 3 or 5 but not both. Display the final sum in the console
 function threesAndFives(){
     let i=100;
@@ -194,6 +224,8 @@ function threesAndFives(){
 }
 // console.log(threesAndFives())
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //​ Change your function to make a BetterThreesFives(start,end)​where start and end  values are customizable
 function BetterThreesFives(start, end){
     let i = start;
@@ -210,6 +242,8 @@ function BetterThreesFives(start, end){
 }
 // console.log(BetterThreesFives(1,15)) //expected output:45
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 //Implement generateCoinChange(cents)​ that accepts a parameter for the number of cents, and computes how to represent that amount with the smallest number of coins. Console.log the result
 function generateCoinChange(cents){
     if(cents<=0){
@@ -272,6 +306,8 @@ function generateCoinChange(cents){
 // console.log('46:')
 // generateCoinChange(46) //expected output: 1 quarter, 2 dimes, 1 penny
 
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 // Implement a ‘die’ that randomly returns an integer between 1 and 6 inclusive. Roll a pair of these dice, tracking the statistics until doubles are rolled. Display the number of rolls, min, max, and average
 
 let numOfRolls = 0
@@ -281,29 +317,70 @@ let rollArray = []
 let averageRoll = 0
 
 function statisticsToDoubles(){
-    let roll1 = oneDie()
-    let roll2 = oneDie()
-    numOfRolls += 1
-    minRoll = Math.min(roll1, roll2, minRoll)
-    maxRoll = Math.max(roll1, roll2, maxRoll)
-    rollArray.push(roll1)
-    rollArray.push(roll2)
+    let doubles = false
+    while(doubles==false){
+        let roll1 = oneDie()
+        let roll2 = oneDie()
+        numOfRolls += 1
+        minRoll = Math.min(roll1, roll2, minRoll)
+        maxRoll = Math.max(roll1, roll2, maxRoll)
+        rollArray.push([roll1, roll2])
+        if(roll1==roll2){
+            doubles = true;
+        }
+    }
     let totalRolls = 0
     rollArray.forEach(roll => {
-        totalRolls += roll
+        roll.forEach(die=>{
+            totalRolls += die
+        })
+        
     });
-    averageRoll = totalRolls/(numOfRolls*2)
+    console.log('totalRolls: ', totalRolls, typeof(totalRolls))
+    console.log('numOfRolls: ', numOfRolls, typeof(numOfRolls))
+    // totalRolls = parseInt(totalRolls)
+    // numOfRolls = parseInt(numOfRolls)
+    averageRoll = totalRolls/numOfRolls
+    // averageRoll = Math.round((totalRolls/(numOfRolls)*100)/100)
 }
 
-function oneDie(){
-    //Math.random() * max + min
-    return (Math.trunc(Math.random() * 6 + 1))
+function oneDie(){ //whatever Math is assigned here applies to all subsequent calculations
+    //random number in range: Math.random() * (max-min) + min
+    
+    // return (Math.trunc(Math.random() * 5 + 1))
+    
+    return Math.round((Math.random()*5+1))
 }
 
-statisticsToDoubles()
-statisticsToDoubles()
-statisticsToDoubles()
-console.log('numOfRolls: ', numOfRolls)
-console.log('minRoll: ', minRoll)
-console.log('maxRoll: ', maxRoll)
-console.log('averageRoll: ', Math.round(averageRoll, 2))
+// statisticsToDoubles()
+// console.log('numOfRolls: ', numOfRolls)
+// console.log('minRoll: ', minRoll)
+// console.log('maxRoll: ', maxRoll)
+// console.log('rollArray: ', rollArray) //for testing only
+// console.log('averageRoll: ', Math.round(averageRoll, 2))
+
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+// implement function that, given a number,
+// sums that number's digits repeatedly
+// until sum is only one digit
+// return final one digit result
+
+function sumToOneDigit(num){
+    let sum = 0;
+    if(num.toString().length==1){return num};
+    while(num.toString().length>1){
+        for(let i=0;i<num.toString().length;i++){
+            digit = num.toString().charAt(i);
+            if(Number(digit)){sum += Number(digit)}
+        }
+        if(sum.toString().length>1){num = sum;
+                                    sum = 0;
+        }else{
+            return sum;
+        }
+    }
+}
+console.log(sumToOneDigit(12)) //expected output: 3
+console.log(sumToOneDigit(1.23)) //expected output: 6
+console.log(sumToOneDigit(1234567)) //expected output: 1
