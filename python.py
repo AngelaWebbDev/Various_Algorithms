@@ -298,6 +298,60 @@ def sumToOneDigit(num):
             sum = 0
     return sum
             
-print(sumToOneDigit(12)) #expected output: 3
-print(sumToOneDigit(1.23)) #expected output: 6
-print(sumToOneDigit(1234567)) #expected output: 1
+# print(sumToOneDigit(12)) #expected output: 3
+# print(sumToOneDigit(1.23)) #expected output: 6
+# print(sumToOneDigit(1234567)) #expected output: 1
+
+#implement fibonacci(num) that accepts a number
+#and returns which ordinal place it exists at in the fibonacci sequence
+#if the number is not in fibonacci sequence, return "not a fibonacci number"
+
+def fibonacci1(num):
+    if(num<0):
+        return 'No negatives in Fibonacci'
+    if(num%1>0):
+        return 'No decimals in Fibonacci'
+    if(num==0):
+        return 1
+    if(num==1):
+        return 2
+    counter1 = 0
+    counter2 = 1
+    for i in range(1,num):
+        temp = counter2
+        counter2 = counter1 + counter2
+        counter1 = temp
+        if(counter2==num):
+            return i+2
+    return 'Not in Fibonacci Sequence'
+#fibonacci: 0 1 1 2 3 5 8 13 21 34 55 89
+print(fibonacci1(89)) #output: 12
+print(fibonacci1(-3)) #output: no negatives
+print(fibonacci1(1.2)) #output: no decimals
+print(fibonacci1(0)) #output: 1
+
+#implement fibonacci(place) that accepts a number
+#and returns which number is at that place in the fibonacci list
+#if the number is not in fibonacci sequence, return "not a fibonacci number"
+
+def fibonacci2(place):
+    if(place<1):
+        return 'Place number cannot be less than 1'
+    if(place%1>0):
+        return 'Place number must be a whole number'
+    if(place==1):
+        return 0
+    counter1 = 0
+    counter2 = 1
+    for i in range(2,place):
+        temp = counter2
+        counter2 = counter1 + counter2
+        counter1 = temp
+    return counter2
+#fibonacci: 0 1 1 2 3 5 8 13 21 34 55 89
+print(fibonacci2(-3)) #output: can't be <1
+print(fibonacci2(1.2)) #output: no decimals
+print(fibonacci2(0)) #output: can't be <1
+print(fibonacci2(1)) #output: 0
+print(fibonacci2(8)) #output: 13
+print(fibonacci2(12)) #output: 89
