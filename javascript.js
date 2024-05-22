@@ -408,10 +408,10 @@ function fibonacci1(num){
     return 'Not in Fibonacci Sequence'
 }
 //fibonacci: 0 1 1 2 3 5 8 13 21 34 55 89
-console.log(fibonacci1(89)) //output: 12
-console.log(fibonacci1(-3)) //output: no negatives
-console.log(fibonacci1(1.2)) //output: no decimals
-console.log(fibonacci1(0)) //output: 1
+// console.log(fibonacci1(89)) //output: 12
+// console.log(fibonacci1(-3)) //output: no negatives
+// console.log(fibonacci1(1.2)) //output: no decimals
+// console.log(fibonacci1(0)) //output: 1
 
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
@@ -433,9 +433,31 @@ function fibonacci2(place){
     return counter1
 }
 //fibonacci: 0 1 1 2 3 5 8 13 21 34 55 89
-console.log(fibonacci2(-3)) //output: can't be <1
-console.log(fibonacci2(1.2)) //output: no decimals
-console.log(fibonacci2(0)) //output: can't be <1
-console.log(fibonacci2(1)) //output: 0
-console.log(fibonacci2(8)) //output: 13
-console.log(fibonacci2(12)) //output: 89
+// console.log(fibonacci2(-3)) //output: can't be <1
+// console.log(fibonacci2(1.2)) //output: no decimals
+// console.log(fibonacci2(0)) //output: can't be <1
+// console.log(fibonacci2(1)) //output: 0
+// console.log(fibonacci2(8)) //output: 13
+// console.log(fibonacci2(12)) //output: 89
+
+// accept 2 non-negative integers as args
+// return last digit of a raised to exponent b
+function lastDigitAtoB(a,b){
+    if(b<0 || a<0){
+        return 'both numbers must be at least zero'
+    }
+    if(b==1){
+        return a%10
+    }
+    let quotient = a
+    for(let i=2;i==b;i++){
+        quotient *= a
+    }
+    return quotient%10
+}
+console.log(lastDigitAtoB(32,1)) //2
+console.log(lastDigitAtoB(-1,1)) //both numbers must be at least zero
+console.log(lastDigitAtoB(2,-4)) //both numbers must be at least zero
+console.log(lastDigitAtoB(-3,-6)) //both numbers must be at least zero
+console.log(lastDigitAtoB(12,5)) //2
+console.log(lastDigitAtoB(3,4)) //1

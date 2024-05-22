@@ -325,10 +325,10 @@ def fibonacci1(num):
             return i+2
     return 'Not in Fibonacci Sequence'
 #fibonacci: 0 1 1 2 3 5 8 13 21 34 55 89
-print(fibonacci1(89)) #output: 12
-print(fibonacci1(-3)) #output: no negatives
-print(fibonacci1(1.2)) #output: no decimals
-print(fibonacci1(0)) #output: 1
+# print(fibonacci1(89)) #output: 12
+# print(fibonacci1(-3)) #output: no negatives
+# print(fibonacci1(1.2)) #output: no decimals
+# print(fibonacci1(0)) #output: 1
 
 #implement fibonacci(place) that accepts a number
 #and returns which number is at that place in the fibonacci list
@@ -349,9 +349,27 @@ def fibonacci2(place):
         counter1 = temp
     return counter2
 #fibonacci: 0 1 1 2 3 5 8 13 21 34 55 89
-print(fibonacci2(-3)) #output: can't be <1
-print(fibonacci2(1.2)) #output: no decimals
-print(fibonacci2(0)) #output: can't be <1
-print(fibonacci2(1)) #output: 0
-print(fibonacci2(8)) #output: 13
-print(fibonacci2(12)) #output: 89
+# print(fibonacci2(-3)) #output: can't be <1
+# print(fibonacci2(1.2)) #output: no decimals
+# print(fibonacci2(0)) #output: can't be <1
+# print(fibonacci2(1)) #output: 0
+# print(fibonacci2(8)) #output: 13
+# print(fibonacci2(12)) #output: 89
+
+# accept 2 non-negative integers as args
+# return last digit of a raised to exponent b
+def lastDigitAtoB(a,b):
+    if a<0 or b<0:
+        return 'both numbers must be at least 0'
+    if b==1:
+        return a%10
+    quotient = a
+    for i in range(2,b+1):
+        quotient *= a
+    return quotient%10    
+print(lastDigitAtoB(32,1)) #2
+print(lastDigitAtoB(-1,1)) #both numbers must be at least zero
+print(lastDigitAtoB(2,-4)) #both numbers must be at least zero
+print(lastDigitAtoB(-3,-6)) #both numbers must be at least zero
+print(lastDigitAtoB(12,5)) #2
+print(lastDigitAtoB(3,4)) #1
