@@ -367,9 +367,37 @@ def lastDigitAtoB(a,b):
     for i in range(2,b+1):
         quotient *= a
     return quotient%10    
-print(lastDigitAtoB(32,1)) #2
-print(lastDigitAtoB(-1,1)) #both numbers must be at least zero
-print(lastDigitAtoB(2,-4)) #both numbers must be at least zero
-print(lastDigitAtoB(-3,-6)) #both numbers must be at least zero
-print(lastDigitAtoB(12,5)) #2
-print(lastDigitAtoB(3,4)) #1
+# print(lastDigitAtoB(32,1)) #2
+# print(lastDigitAtoB(-1,1)) #both numbers must be at least zero
+# print(lastDigitAtoB(2,-4)) #both numbers must be at least zero
+# print(lastDigitAtoB(-3,-6)) #both numbers must be at least zero
+# print(lastDigitAtoB(12,5)) #2
+# print(lastDigitAtoB(3,4)) #1
+
+#given number of seconds since 12:00:00
+#print the angles (in degrees) of the hour, minute, and second hands
+#12 is 0 degrees
+def clockHandAngles(seconds):
+    if seconds<0:
+        print('Time can only move forward')
+        return
+    print(seconds, ' seconds:')
+    sec = int(seconds%60)
+    seconds -= sec
+    min = int(seconds/60%60)
+    seconds -= (min*60)
+    hour = int(seconds/3600)
+    secondHandAngle = sec*6
+    minuteHandAngle = int(min*6)
+    hourHandAngle = int(hour*30)
+    print('second hand: ', secondHandAngle, ' degrees')
+    print('minute hand: ', minuteHandAngle, ' degrees')
+    print('hour hand: ', hourHandAngle, ' degrees')
+    return
+    
+clockHandAngles(15) #12:00:15, s:90d m:0d h:0d
+clockHandAngles(60) #12:01:00, s:0d m:6d h:0d
+clockHandAngles(30) #12:00:30, s:180d m:0d h:0d
+clockHandAngles(300) #12:05:00 s:0d m:30d h:0d
+clockHandAngles(7200) #2:00:00
+############# problem: this does not account for slowly moving minute and hour hands #########################
