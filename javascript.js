@@ -455,9 +455,61 @@ function lastDigitAtoB(a,b){
     }
     return quotient%10
 }
-console.log(lastDigitAtoB(32,1)) //2
-console.log(lastDigitAtoB(-1,1)) //both numbers must be at least zero
-console.log(lastDigitAtoB(2,-4)) //both numbers must be at least zero
-console.log(lastDigitAtoB(-3,-6)) //both numbers must be at least zero
-console.log(lastDigitAtoB(12,5)) //2
-console.log(lastDigitAtoB(3,4)) //1
+// console.log(lastDigitAtoB(32,1)) //2
+// console.log(lastDigitAtoB(-1,1)) //both numbers must be at least zero
+// console.log(lastDigitAtoB(2,-4)) //both numbers must be at least zero
+// console.log(lastDigitAtoB(-3,-6)) //both numbers must be at least zero
+// console.log(lastDigitAtoB(12,5)) //2
+// console.log(lastDigitAtoB(3,4)) //1
+
+//given number of seconds since 12:00:00
+//print the angles (in degrees) of the hour, minute, and second hands
+//12 is 0 degrees
+//assumption not stated in challenge: minute & hour hands glide while second hand jumps
+function clockHandAngles(seconds){
+    if(seconds<0){return 'Time can only move forward. \n'}
+    //num of seconds = seconds%60 (every 60 it resets to 0 deg)
+    let sec = (seconds%60)
+    //num of minutes = (previous results)/60, then %60 (every 3600, it resets to 0 deg)
+    seconds -= sec
+    let min = (seconds/60%60)
+    //num of hours = (previous results)/3600
+    seconds -= (min * 60)
+    let hour = seconds/3600
+    //second hand = 6 deg per second
+    let secondhandangle = sec * 6
+    //minute hand = 0.1 deg per second
+    let minutehandangle = ((min*60)*0.1)
+    //hour hand = 30 deg per hour + 0.5 deg per minute
+    let hourhandangle = (hour * 30)
+    hourhandangle = ((hour * 30) + (min * 0.5))
+
+    console.log(sec, ' seconds = ', secondhandangle, ' degrees')
+    console.log(min, ' minutes = ', minutehandangle, ' degrees')
+    console.log((hour + (Math.round((min/60)*100))/100), ' hours = ', hourhandangle, ' degrees')
+    return ' '
+}
+
+console.log('-100 seconds (N/A): ')
+console.log(clockHandAngles(-100)) //output: Time can only move forward
+
+console.log('15 seconds (00:00:15):')
+console.log(clockHandAngles(15))
+
+console.log('30 seconds (00:00:30):')
+console.log(clockHandAngles(30))
+
+console.log('60 seconds (00:01:00):')
+console.log(clockHandAngles(60))
+
+console.log('300 seconds (00:05:00)):')
+console.log(clockHandAngles(300))
+
+console.log('21,600 seconds (06:00:00):')
+console.log(clockHandAngles(21600))
+
+console.log('23,400 seconds (06:30:00):')
+console.log(clockHandAngles(23400))
+
+console.log('23,415 seconds (06:30:15):')
+console.log(clockHandAngles(23415))

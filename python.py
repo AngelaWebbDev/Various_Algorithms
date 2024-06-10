@@ -377,27 +377,53 @@ def lastDigitAtoB(a,b):
 #given number of seconds since 12:00:00
 #print the angles (in degrees) of the hour, minute, and second hands
 #12 is 0 degrees
+#assumption not stated in challenge: minute & hour hands glide while second hand jumps
 def clockHandAngles(seconds):
     if seconds<0:
-        print('Time can only move forward')
-        return
-    print(seconds, ' seconds:')
+        return 'Time can only move forward \n'
+
+    # num of seconds = seconds%60 (every 60, it resets to 0 deg)
     sec = int(seconds%60)
+    # num of minutes = (previous results)/60, then %60 (every 3600, it resets to 0 deg)
     seconds -= sec
     min = int(seconds/60%60)
+    # num of hours = (previous results)/3600
     seconds -= (min*60)
     hour = int(seconds/3600)
-    secondHandAngle = sec*6
-    minuteHandAngle = int(min*6)
-    hourHandAngle = int(hour*30)
-    print('second hand: ', secondHandAngle, ' degrees')
-    print('minute hand: ', minuteHandAngle, ' degrees')
-    print('hour hand: ', hourHandAngle, ' degrees')
-    return
     
-clockHandAngles(15) #12:00:15, s:90d m:0d h:0d
-clockHandAngles(60) #12:01:00, s:0d m:6d h:0d
-clockHandAngles(30) #12:00:30, s:180d m:0d h:0d
-clockHandAngles(300) #12:05:00 s:0d m:30d h:0d
-clockHandAngles(7200) #2:00:00
-############# problem: this does not account for slowly moving minute and hour hands #########################
+    # second hand = 6 deg per second
+    secondHandAngle = sec*6
+    # minute hand = 0.1 deg per second
+    minuteHandAngle = int((min*60)*0.1)
+    # hour hand = 30 deg per hour + 0.5 deg per minute
+    hourHandAngle = int(hour*30)
+    hourHandAngle = ((hour*30) + (min*.5))
+    
+    print(sec, ' seconds = ', secondHandAngle, ' degrees')
+    print(min, ' minutes = ', minuteHandAngle, ' degrees')
+    print("{:.1f}".format(hour + min/60), ' hours = ', hourHandAngle, ' degrees')
+    return ' '
+
+print('-100 seconds (N/A): ')
+print(clockHandAngles(-100)) #output: Time can only move forward
+
+print('15 seconds (00:00:15):')
+print(clockHandAngles(15))
+
+print('30 seconds (00:00:30):')
+print(clockHandAngles(30))
+
+print('60 seconds (00:01:00):')
+print(clockHandAngles(60))
+
+print('300 seconds (00:05:00)):')
+print(clockHandAngles(300))
+
+print('21,600 seconds (06:00:00):')
+print(clockHandAngles(21600))
+
+print('23,400 seconds (06:30:00):')
+print(clockHandAngles(23400))
+
+print('23,415 seconds (06:30:15):')
+print(clockHandAngles(23415))
