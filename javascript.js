@@ -524,5 +524,18 @@ function pushFront(arr, value){
     }
     return newArr
 }
-console.log(pushFront([1,2,3], 4))
-console.log(pushFront([1,2,3,4], 0))
+// console.log(pushFront([1,2,3], 4))
+// console.log(pushFront([1,2,3,4], 0))
+
+//given an array, remove/return value at [0]
+//only allowed built-in method: pop
+function popFront(arr){
+    let firstValue = arr[0]
+    let newArr = []
+    for(let i=1;i<arr.length;i++){
+        newArr[i-1] = arr[i]
+    }
+    arr = newArr
+    return firstValue
+}
+console.log(popFront([1,2,3]))

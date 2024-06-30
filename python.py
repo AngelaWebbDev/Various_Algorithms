@@ -433,5 +433,11 @@ def clockHandAngles(seconds):
 #no built-in array methods
 def pushFront(arr, value):
     return [value] + arr
+# print(pushFront([1,2,3],0))
 
-print(pushFront([1,2,3],0))
+#given an array, remove/return value at [0]
+#only allowed built-in method: pop
+def popFront(arr):
+    return arr.pop(0)
+
+print(popFront([1,2,3]))
