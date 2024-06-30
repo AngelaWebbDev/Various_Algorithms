@@ -490,26 +490,39 @@ function clockHandAngles(seconds){
     return ' '
 }
 
-console.log('-100 seconds (N/A): ')
-console.log(clockHandAngles(-100)) //output: Time can only move forward
+// console.log('-100 seconds (N/A): ')
+// console.log(clockHandAngles(-100)) //output: Time can only move forward
 
-console.log('15 seconds (00:00:15):')
-console.log(clockHandAngles(15))
+// console.log('15 seconds (00:00:15):')
+// console.log(clockHandAngles(15))
 
-console.log('30 seconds (00:00:30):')
-console.log(clockHandAngles(30))
+// console.log('30 seconds (00:00:30):')
+// console.log(clockHandAngles(30))
 
-console.log('60 seconds (00:01:00):')
-console.log(clockHandAngles(60))
+// console.log('60 seconds (00:01:00):')
+// console.log(clockHandAngles(60))
 
-console.log('300 seconds (00:05:00)):')
-console.log(clockHandAngles(300))
+// console.log('300 seconds (00:05:00)):')
+// console.log(clockHandAngles(300))
 
-console.log('21,600 seconds (06:00:00):')
-console.log(clockHandAngles(21600))
+// console.log('21,600 seconds (06:00:00):')
+// console.log(clockHandAngles(21600))
 
-console.log('23,400 seconds (06:30:00):')
-console.log(clockHandAngles(23400))
+// console.log('23,400 seconds (06:30:00):')
+// console.log(clockHandAngles(23400))
 
-console.log('23,415 seconds (06:30:15):')
-console.log(clockHandAngles(23415))
+// console.log('23,415 seconds (06:30:15):')
+// console.log(clockHandAngles(23415))
+
+//given an array & an additional value,
+//insert this value at the beginning of the array
+//no built-in array methods
+function pushFront(arr, value){
+    newArr = [value];
+    for(let i=0;i<arr.length;i++){
+        newArr[i+1] = arr[i]
+    }
+    return newArr
+}
+console.log(pushFront([1,2,3], 4))
+console.log(pushFront([1,2,3,4], 0))

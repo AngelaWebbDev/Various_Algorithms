@@ -404,26 +404,34 @@ def clockHandAngles(seconds):
     print("{:.1f}".format(hour + min/60), ' hours = ', hourHandAngle, ' degrees')
     return ' '
 
-print('-100 seconds (N/A): ')
-print(clockHandAngles(-100)) #output: Time can only move forward
+# print('-100 seconds (N/A): ')
+# print(clockHandAngles(-100)) #output: Time can only move forward
 
-print('15 seconds (00:00:15):')
-print(clockHandAngles(15))
+# print('15 seconds (00:00:15):')
+# print(clockHandAngles(15))
 
-print('30 seconds (00:00:30):')
-print(clockHandAngles(30))
+# print('30 seconds (00:00:30):')
+# print(clockHandAngles(30))
 
-print('60 seconds (00:01:00):')
-print(clockHandAngles(60))
+# print('60 seconds (00:01:00):')
+# print(clockHandAngles(60))
 
-print('300 seconds (00:05:00)):')
-print(clockHandAngles(300))
+# print('300 seconds (00:05:00)):')
+# print(clockHandAngles(300))
 
-print('21,600 seconds (06:00:00):')
-print(clockHandAngles(21600))
+# print('21,600 seconds (06:00:00):')
+# print(clockHandAngles(21600))
 
-print('23,400 seconds (06:30:00):')
-print(clockHandAngles(23400))
+# print('23,400 seconds (06:30:00):')
+# print(clockHandAngles(23400))
 
-print('23,415 seconds (06:30:15):')
-print(clockHandAngles(23415))
+# print('23,415 seconds (06:30:15):')
+# print(clockHandAngles(23415))
+
+#given an array & an additional value,
+#insert this value at the beginning of the array
+#no built-in array methods
+def pushFront(arr, value):
+    return [value] + arr
+
+print(pushFront([1,2,3],0))
