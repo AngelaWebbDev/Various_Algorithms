@@ -439,5 +439,24 @@ def pushFront(arr, value):
 #only allowed built-in method: pop
 def popFront(arr):
     return arr.pop(0)
+# print(popFront([1,2,3]))
 
-print(popFront([1,2,3]))
+#given an array, index, & additional value
+#insert value into array at [index]
+#no built-in methods
+def insertAt(arr, index, value):
+    if(index>len(arr)):
+        return 'index cannot be more than current highest index plus one'
+    elif(index<0):
+        return 'index cannot be less than 0'
+    else:
+        previousValue = value
+        for i in range(index,len(arr)):
+            tempValue = arr[index]
+            arr[index] = previousValue
+            previousValue = tempValue
+        arr = arr + [previousValue]
+        return arr
+print(insertAt([1,2,4],5,'will return index too big error'))
+print(insertAt([1,2,3],-2,'will return index too small error'))
+print(insertAt([1,2,4], 2, '3 added'))

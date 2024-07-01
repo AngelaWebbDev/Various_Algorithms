@@ -538,4 +538,28 @@ function popFront(arr){
     arr = newArr
     return firstValue
 }
-console.log(popFront([1,2,3]))
+// console.log(popFront([1,2,3]))
+
+//given an array, index, & additional value
+//insert value into array at [index]
+//no built-in methods
+function insertAt(arr,index, value){
+    if(index>arr.length){
+        return 'index cannot be more than the current highest index + 1'
+    }else if(index<0){
+        return 'index cannot be less than 0'
+    }else{
+        previousValue = value
+        for(let i=index;i<arr.length;i++){
+            tempStorage = arr[index]
+            arr[index] = previousValue
+            previousValue = tempStorage
+        }
+        arr[arr.length] = previousValue
+        return arr
+    }
+    
+}
+console.log(insertAt([1,2,4],5,'will return index too big error'))
+console.log(insertAt([1,2,3],-2,'will return index too small error'))
+console.log(insertAt([1,2,4], 2, '3 added'))
