@@ -457,6 +457,17 @@ def insertAt(arr, index, value):
             previousValue = tempValue
         arr = arr + [previousValue]
         return arr
-print(insertAt([1,2,4],5,'will return index too big error'))
-print(insertAt([1,2,3],-2,'will return index too small error'))
-print(insertAt([1,2,4], 2, '3 added'))
+# print(insertAt([1,2,4],5,'will return index too big error'))
+# print(insertAt([1,2,3],-2,'will return index too small error'))
+# print(insertAt([1,2,4], 2, '3 added'))
+
+#given array and index, remove/return array value at that index
+#only allowed built-in method: pop
+def removeAt(arr, index):
+    if(index<0):
+        return 'index cannot be less than 0'
+    elif(index>len(arr)):
+        return 'index cannot be greater than current highest index + 1'
+    else:
+        return arr.pop(index)
+print(removeAt([1,2,3,'three',4],3))

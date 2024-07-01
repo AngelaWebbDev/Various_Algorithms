@@ -560,6 +560,24 @@ function insertAt(arr,index, value){
     }
     
 }
-console.log(insertAt([1,2,4],5,'will return index too big error'))
-console.log(insertAt([1,2,3],-2,'will return index too small error'))
-console.log(insertAt([1,2,4], 2, '3 added'))
+// console.log(insertAt([1,2,4],5,'will return index too big error'))
+// console.log(insertAt([1,2,3],-2,'will return index too small error'))
+// console.log(insertAt([1,2,4], 2, '3 added'))
+
+//given array and index, remove/return array value at that index
+//only allowed built-in method: pop
+function removeAt(arr,index){
+    if(index<0){return 'index cannot be less than 0'}
+    else if(index>arr.length){return 'index cannot be greater than current highest index +1'}
+    else{
+        value = arr[index]
+        for(let i=index;i<arr.length;i++){
+            if(arr[i+1]){arr[i] = arr[i+1]}
+        }
+        arr.pop()
+        return value
+    }
+}
+console.log(removeAt([1,2,'less than 0 error', 4], -2))
+console.log(removeAt([1,2,'greater than highest + 1 error', 4], 5))
+console.log(removeAt([1,2,'three',3,4],2)) //output: three
