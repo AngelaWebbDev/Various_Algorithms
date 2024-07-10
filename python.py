@@ -478,5 +478,15 @@ def reverseArray(arr):
     for i in range(len(arr)-1, -1, -1):
         newArr.append(arr[i])
     return newArr
+# print(reverseArray([1,2,3,4,5]))
 
-print(reverseArray([1,2,3,4,5]))
+#given an array, remove any value <0
+def removeNegatives(arr):
+    for item in arr:
+        if(type(item)!='int' and type(item)!='float'):
+            continue
+        if(item<0):
+            arr.pop(arr.index(item))
+    return arr
+print(removeNegatives([-1,1,-2,2,-3,3]))
+print(removeNegatives(['item','one',1]))

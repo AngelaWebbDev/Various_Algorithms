@@ -589,4 +589,12 @@ function reverseArray(arr){
         newArr.push(arr[i])
     return newArr
 }
-console.log(reverseArray([1,2,3,4,5]))
+// console.log(reverseArray([1,2,3,4,5]))
+
+//given an array, remove any value <0
+function removeNegatives(arr){
+    arr.forEach(item => {if(item<0){arr.splice(arr.indexOf(item),1)}})
+    return arr
+}
+console.log(removeNegatives([-1,1,-2,2,-3,3]))
+console.log(removeNegatives(['item','one',1]))
