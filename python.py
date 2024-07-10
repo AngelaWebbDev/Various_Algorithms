@@ -470,4 +470,13 @@ def removeAt(arr, index):
         return 'index cannot be greater than current highest index + 1'
     else:
         return arr.pop(index)
-print(removeAt([1,2,3,'three',4],3))
+# print(removeAt([1,2,3,'three',4],3))
+
+# given numerical array, reverse order of the values
+def reverseArray(arr):
+    newArr = [arr.pop()]
+    for i in range(len(arr)-1, -1, -1):
+        newArr.append(arr[i])
+    return newArr
+
+print(reverseArray([1,2,3,4,5]))

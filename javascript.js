@@ -578,6 +578,15 @@ function removeAt(arr,index){
         return value
     }
 }
-console.log(removeAt([1,2,'less than 0 error', 4], -2))
-console.log(removeAt([1,2,'greater than highest + 1 error', 4], 5))
-console.log(removeAt([1,2,'three',3,4],2)) //output: three
+// console.log(removeAt([1,2,'less than 0 error', 4], -2))
+// console.log(removeAt([1,2,'greater than highest + 1 error', 4], 5))
+// console.log(removeAt([1,2,'three',3,4],2)) //output: three
+
+//given numerical array, reverse order of the values
+function reverseArray(arr){
+    newArr = []
+    for (let i=arr.length-1;i>=0;i--)
+        newArr.push(arr[i])
+    return newArr
+}
+console.log(reverseArray([1,2,3,4,5]))
