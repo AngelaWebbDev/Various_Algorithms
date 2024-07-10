@@ -596,5 +596,18 @@ function removeNegatives(arr){
     arr.forEach(item => {if(item<0){arr.splice(arr.indexOf(item),1)}})
     return arr
 }
-console.log(removeNegatives([-1,1,-2,2,-3,3]))
-console.log(removeNegatives(['item','one',1]))
+// console.log(removeNegatives([-1,1,-2,2,-3,3]))
+// console.log(removeNegatives(['item','one',1]))
+
+//given array of building heights (negative is below ground)
+//return array of buildings you can see
+//the buildings are in a row, so you cannot see a shorter building after a taller building, and cannot see underground
+function skylineHeights(arr){
+    tallest = 0
+    visible = []
+    arr.forEach(building => {if(building>tallest){
+                                visible.push(building);
+                                tallest = building}})
+    return visible
+}
+console.log(skylineHeights([1,-1,7,3]))

@@ -488,5 +488,18 @@ def removeNegatives(arr):
         if(item<0):
             arr.pop(arr.index(item))
     return arr
-print(removeNegatives([-1,1,-2,2,-3,3]))
-print(removeNegatives(['item','one',1]))
+# print(removeNegatives([-1,1,-2,2,-3,3]))
+# print(removeNegatives(['item','one',1]))
+
+#given array of building heights (negative is below ground)
+#return array of buildings you can see
+#the buildings are in a row, so you cannot see a shorter building after a taller building, and cannot see underground
+def skylineHeights(arr):
+    tallest = 0
+    visible = []
+    for building in arr:
+        if(building>tallest):
+            tallest = building
+            visible.append(building)
+    return visible
+print(skylineHeights([1,-1,7,3]))
