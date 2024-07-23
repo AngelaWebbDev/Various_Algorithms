@@ -610,4 +610,26 @@ function skylineHeights(arr){
                                 tallest = building}})
     return visible
 }
-console.log(skylineHeights([1,-1,7,3]))
+// console.log(skylineHeights([1,-1,7,3]))
+
+//given sorted array and a value
+//return whether value is present in array
+//do not iterate sequentially
+function binarySearch(arr, val){
+    while(arr.length>2){
+        median = Math.trunc(arr.length/2)
+        if(arr[median]<val)
+            arr = arr.slice(median+1)
+        else if(arr[median]>val)
+            arr = arr.slice(0, median+1)
+        else
+            return val + ' is in the array.'
+    }
+    if(arr[0]!=val && arr[1]!=val)
+        return val + ' is not in the array'
+    else
+        return val + ' is in the array'
+}
+console.log(binarySearch([1,2,3,4,5,6,7,8,9,10],3)) //in the array
+console.log(binarySearch([1,2,3,4,5],6)) //not in the array
+console.log(binarySearch([2,4,6,8,10,12],3)) //not in the array
