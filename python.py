@@ -502,4 +502,26 @@ def skylineHeights(arr):
             tallest = building
             visible.append(building)
     return visible
-print(skylineHeights([1,-1,7,3]))
+# print(skylineHeights([1,-1,7,3]))
+
+#given sorted array and a value
+#return whether value is present in array
+#do not iterate sequentially
+def binarySearch(arr, val):
+    while(len(arr)>2):
+        median = math.ceil(len(arr)/2)
+        if(arr[median]<val):
+            arr = arr[median:len(arr)]
+        elif(arr[median]>val):
+            arr = arr[0:median]
+        else:
+            return str(val) + ' is in the array.'
+    if(arr[0] and arr[0]!=val):
+        return str(val) + ' is not in the array'
+    elif(arr[1] and arr[1]!=val):
+        return str(val) + ' is not in the array'
+    else:
+        return val + ' is in the array'
+print(binarySearch([1,2,3,4,5,6,7,8,9,10],3)) #in the array
+print(binarySearch([1,2,3,4,5],6)) #not in the array
+print(binarySearch([2,4,6,8,10,12],3)) #not in the array
