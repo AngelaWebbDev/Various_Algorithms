@@ -630,6 +630,23 @@ function binarySearch(arr, val){
     else
         return val + ' is in the array'
 }
-console.log(binarySearch([1,2,3,4,5,6,7,8,9,10],3)) //in the array
-console.log(binarySearch([1,2,3,4,5],6)) //not in the array
-console.log(binarySearch([2,4,6,8,10,12],3)) //not in the array
+// console.log(binarySearch([1,2,3,4,5,6,7,8,9,10],3)) //in the array
+// console.log(binarySearch([1,2,3,4,5],6)) //not in the array
+// console.log(binarySearch([2,4,6,8,10,12],3)) //not in the array
+
+//given sorted numerical array that has been rotated by an unknown amount, find/return minimum value
+function minOfSortedRotated(arr){
+    if(arr[arr.length-1]>arr[0]){return arr[0]}
+    minValue = arr[0]
+    for(let i=1;i<arr.length;i++){
+        if(isNaN(arr[i]) || typeof(arr[i])=='boolean'){return 'arrays can only contain numbers'}
+        if(arr[i]<minValue){minValue=arr[i]}
+    }
+    return minValue
+}
+console.log(minOfSortedRotated([1,2,3,4,5,6]))
+console.log(minOfSortedRotated([2,';',4,5,6,1]))
+console.log(minOfSortedRotated([3,4,true,6,1,2]))
+console.log(minOfSortedRotated([4,5,6,1,2,3]))
+console.log(minOfSortedRotated([1.5,1.6,1.1,1.2,1.3,1.4]))
+console.log(minOfSortedRotated([6,1,2,3,4,5]))

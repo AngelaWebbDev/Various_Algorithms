@@ -522,6 +522,25 @@ def binarySearch(arr, val):
         return str(val) + ' is not in the array'
     else:
         return val + ' is in the array'
-print(binarySearch([1,2,3,4,5,6,7,8,9,10],3)) #in the array
-print(binarySearch([1,2,3,4,5],6)) #not in the array
-print(binarySearch([2,4,6,8,10,12],3)) #not in the array
+# print(binarySearch([1,2,3,4,5,6,7,8,9,10],3)) #in the array
+# print(binarySearch([1,2,3,4,5],6)) #not in the array
+# print(binarySearch([2,4,6,8,10,12],3)) #not in the array
+
+#given sorted numerical array that has been rotated by an unknown amount, find/return minimum value
+def minOfSortedRotated(arr):
+    import math
+    if(arr[len(arr)-1]>arr[0]):
+        return arr[0]
+    minValue = arr[0]
+    for i in range(1,len(arr)):
+        if type(arr[i])!=int and type(arr[i])!=float:
+            return 'arrays can only contain numbers'
+        else:
+            minValue=arr[i]
+    return minValue
+print(minOfSortedRotated([1,2,3,4,5,6]))
+print(minOfSortedRotated([2,';',4,5,6,1]))
+print(minOfSortedRotated([3,4,True,6,1,2]))
+print(minOfSortedRotated([4,5,6,1,2,3]))
+print(minOfSortedRotated([1.5,1.6,1.1,1.2,1.3,1.4]))
+print(minOfSortedRotated([6,1,2,3,4,5]))
